@@ -211,7 +211,7 @@ class CAJParser(object):
 
         # Use mutool to repair xref
         try:
-            check_output(["mutool", "clean", "pdf.tmp", "pdf_toc.pdf"], stderr=STDOUT)
+            check_output(["./mutool", "clean", "pdf.tmp", "pdf_toc.pdf"], stderr=STDOUT)
         except CalledProcessError as e:
             print(e.output.decode("utf-8"))
             raise SystemExit("Command mutool returned non-zero exit status " + str(e.returncode))
